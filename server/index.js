@@ -23,8 +23,23 @@ var personSchema = mongoose.Schema({
 	email: String,
 	notes: String
 });
+const loginSchema = mongoose.Schema({
+    email: {
+        type: String,
+        required: true,
+        unique: true
+      },
+      password: {
+        type: String,
+        required: true
+      }
+    });
+
 
 var Person = mongoose.model("Person", personSchema);
+const Login = mongoose.model("Login", loginSchema);
+
+
 
 app.post('/persons', function (req, res) {
     const personInfo = req.body;
@@ -110,6 +125,26 @@ app.post('/delete/:id', function (req, res) {
             res.status(500).json({ error: 'Database error' });
         });
 });
+
+app.post('/login', function (req, res) {
+    const { email, password } = req.body;
+
+
+    Login.findOne({ email: email, password: password })
+        .then(user => {
+            if (user) {
+                res.status(200).json({ message: 'Login successful' });
+            } else {
+                res.status(401).json({ error: 'Invalid email or password' });
+            }
+        })
+        .catch(err => {
+            res.status(500).json({ error: 'Database error' });
+        });
+});
+
+
+
 
 app.use(express.static('public'));
 
