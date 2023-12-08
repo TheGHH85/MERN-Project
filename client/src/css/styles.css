@@ -1,0 +1,91 @@
+body{
+    background-color: #1e90ff;
+}
+
+
+.login-page h1,
+.login-page h2 {
+    text-align: center;
+    height: 100%;
+    margin-top: 30px;
+}
+
+.login-page h2 {
+    margin-bottom: 50px;
+}
+
+.login-page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.login-page form {
+    margin-left: 20%;
+}
+
+.login-page form button {
+    border-radius: 5px;
+    background-color: #1e90ff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.login-page form button:hover {
+    background-color: #0066cc;
+}
+
+
+
+/* The following is used for .table-page*/
+
+
+
+.table-page h1 {
+    text-align: center;
+    height: 100%;
+color: #fff;
+margin:2% 0;
+}
+.table-page table button {
+    border-radius: 5px;
+    background-color: #8ec7ff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.table-page table button:hover {
+    background-color: #61b1ff;
+}
+.table-box{
+    text-align: center;
+}
+
+
+.add-form form button {
+  
+    cursor: pointer;
+    margin-right: 2%;
+}
+
+
+
+.add-form form label{
+    color: #fff;
+}
+
+.form-box{
+    margin: 3% 10%;
+    border: #000 solid 2px;
+    padding: 1%;
+}
+
+
+
+Footer{
+    text-align: center;
+}
