@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import Navbar from './components/navbar';
-import Footer from './components/footer';
-import { useSignOut } from './useSignOut';
+import Navbar from '../components/navbar';
+import Footer from '../components/footer';
+import { useSignOut } from '../authentication/useSignOut';
 const MyForm = () => {
   const signOut = useSignOut();
     const navigate = useNavigate();
@@ -58,7 +58,7 @@ const MyForm = () => {
    
     <div className="add-form">
     
-    <form class="row g-3" onSubmit={handleSubmit}>
+    <form className="row g-3" onSubmit={handleSubmit}>
       <div className="col-4">
     <label className="form-label">
       First Name:

@@ -29,7 +29,7 @@ function ProtectedRoute() {
     }, [currentUser, login]);
 
     if (isLoading) {
-        return <div>Loading...</div>; // Or any other loading state representation
+        return <div>Loading...</div>; 
     }
 
     return currentUser ? <Outlet /> : <Navigate to="/" />;

@@ -1,6 +1,7 @@
 import React from 'react';
 import '../css/navbar.css';
 
+
 const Navbar = ({ onSignOut }) => { // Add an onSignOut prop
     return (
         <nav className="navbar navbar-expand-lg bg-primary">

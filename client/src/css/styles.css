@@ -2,42 +2,24 @@ body{
     background-color: #1e90ff;
 }
 
+.login-h1{
+    color: #fff;
+    margin: 2% 0;
 
-.login-page h1,
-.login-page h2 {
-    text-align: center;
-    height: 100%;
-    margin-top: 30px;
+}
+.login-form{
+    color: #fff;
+    
 }
 
-.login-page h2 {
-    margin-bottom: 50px;
+.login-form-box{
+    margin: 3% 20%;
+    border: #000 solid 2px;
+    padding: 1%;
 }
-
-.login-page {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
+.login-form-box button{
+    margin-right: 10%;
 }
-
-.login-page form {
-    margin-left: 20%;
-}
-
-.login-page form button {
-    border-radius: 5px;
-    background-color: #1e90ff;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-}
-
-.login-page form button:hover {
-    background-color: #0066cc;
-}
-
-
 
 /* The following is used for .table-page*/
 

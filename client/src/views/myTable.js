@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-import Footer from './components/footer'; 
-import Navbar from './components/navbar'; 
-import './css/styles.css';
-import { useSignOut } from './useSignOut';
+import Footer from '../components/footer'; 
+import Navbar from '../components/navbar'; 
+import '../css/styles.css';
+import { useSignOut } from '../authentication/useSignOut';
 
 
 const MyTable = () => {

@@ -18,16 +18,41 @@ export function AuthProvider({ children }) {
         }
     });
     const login = (user) => {
+        console.log("login being called!");
         setCurrentUser(user);
         localStorage.setItem('user', JSON.stringify(user));
+        console.log("Logging out, current user in local storage:", localStorage.getItem('user'));
     };
     
 console.log("currentUser: ", currentUser);
 
 
-const logout = () => {
-    setCurrentUser(null);
+const logout = async() => {
+    console.log("logout being called!");
+    console.log("Logging out, current user in local storage:", localStorage.getItem('user'));
     localStorage.removeItem('user');
+    console.log("after remove item is called in local storage:", localStorage.getItem('user'));
+    setCurrentUser(null);
+    try {
+        const response = await fetch('http://localhost:8080/logout', {
+            method: 'POST',
+            credentials: 'include' // important to include credentials for cookies to be sent
+        });
+        const data =  response.json();
+        console.log("Server logout response:", data);
+
+        if (data.success) {
+            // Clear client-side storage and state
+            localStorage.removeItem('user');
+            setCurrentUser(null);
+            console.log("after remove item is called in local storage:", localStorage.getItem('user'));
+        } else {
+            console.error("Logout failed on server:", data.message);
+        }
+    } catch (error) {
+        console.error("Error during logout:", error);
+    }   
+   
 };
 
 

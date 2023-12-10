@@ -110,6 +110,21 @@ app.get('/user', (req, res) => {
     }
 });
 
+app.post('/logout', (req, res) => {
+    req.logout((err) => {
+        if (err) {
+            return res.status(500).json({ success: false, message: "Internal server error" });
+        }
+        req.session.destroy((err) => {
+            if (err) {
+                return res.status(500).json({ success: false, message: "Internal server error" });
+            }
+            res.clearCookie('connect.sid');
+            return res.status(200).json({ success: true, message: "Successfully logged out" });
+        });
+    });
+});
+
 
 
 

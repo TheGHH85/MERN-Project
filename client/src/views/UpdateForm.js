@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
-import Navbar from './components/navbar';
-import Footer from './components/footer';
-import './css/styles.css'
-import { useSignOut } from './useSignOut';
+import Navbar from '../components/navbar';
+import Footer from '../components/footer';
+import '../css/styles.css'
+import { useSignOut } from '../authentication/useSignOut';
 const UpdateForm = () => {
   const signOut = useSignOut();
     const { id } = useParams();
