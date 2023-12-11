@@ -1,3 +1,10 @@
+/**
+ * Name: navbar.js
+ * Type: Client Side (Component)
+ * Description: This is the navbar component that will be used to display the navbar on all pages.
+ * Programmer: Zac Bondy - c0870952
+ */
+
 import React from 'react';
 import '../css/navbar.css';
 

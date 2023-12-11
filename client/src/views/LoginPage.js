@@ -1,3 +1,12 @@
+/**
+ * Name: LoginPage.js
+ * Type: Client Side (View)
+ * Description: This is the login page component that will be used to display the login page.
+ * Programmer: Zac Bondy - c0870952
+ */
+
+
+/************************ IMPORTS *****************************/
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
@@ -5,6 +14,16 @@ import { useAuth } from '../authentication/Auth';
 import Footer from '../components/footer'; 
 import '../css/footer.css';
 
+
+/************************ COMPONENT *****************************/
+
+/**
+ * Name: LoginForm
+ * Description: Askes the user to enter their login credentials.
+ *              Then it passes the info to the login function and procceeds with
+ *              the authenticartion proccess. If the user is authenticated, they
+ *              are redirected to the myTable page. 
+ */
 function LoginForm() {
     const navigate = useNavigate();
     const { login } = useAuth(); 
@@ -22,11 +41,9 @@ function LoginForm() {
             url: "http://localhost:8080/login",
         }).then((res) => {
             if (res.data.success) {
-              console.log("res.data.user: ", res.data.user);  
                 login(res.data.user); 
-                console.log("BAM!");
                 navigate("/myTable"); 
-                console.log("BAM2!");
+                
             } else {
                 alert("Wrong email or password, please try again");
             }
@@ -36,6 +53,7 @@ function LoginForm() {
         });
     };
 
+    // Redirects the user to the register page if they do not have a verified account
     const handleRegister = () => {
         navigate("/register");
     }
@@ -88,11 +106,7 @@ function LoginForm() {
         </div>
         <Footer />
     </>
-    
 
-    
-        
-   
 );
 
 

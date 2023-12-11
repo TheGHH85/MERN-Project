@@ -1,9 +1,25 @@
+/**
+ * Name: MyForm.js
+ * Type: Client Side (View)
+ * Description: This is a page the allows the user to add a new employee to the database.
+ * Programmer: Zac Bondy - c0870952
+ */
+
+
+/************************ IMPORTS *****************************/
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import Navbar from '../components/navbar';
 import Footer from '../components/footer';
 import { useSignOut } from '../authentication/useSignOut';
+
+/************************ COMPONENT *****************************/
+
+/**
+ * Name: MyForm
+ * Description: This is the form that will be used to add a new employee to the database.
+ */
 const MyForm = () => {
   const signOut = useSignOut();
     const navigate = useNavigate();
@@ -22,6 +38,12 @@ const MyForm = () => {
     notes: ''
   });
 
+  /**
+   * Name: handleSubmit
+   * Description: This function is called when the user submits the form. 
+   *              It sends a POST request to the server with the form data. 
+   *              Then navigates to the myTable page.
+   */
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -41,7 +63,6 @@ const MyForm = () => {
       notes: ''
     });
 
-    // Navigate to '/myTable' after form submission
     navigate('/myTable');
   };
 

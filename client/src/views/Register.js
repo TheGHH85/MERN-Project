@@ -1,8 +1,25 @@
+/**
+ * Name: RegisterForm.js
+ * Type: Client Side (View)
+ * Description: This is the register page component that will be used to display the register page.
+ * Programmer: Zac Bondy - c0870952
+ */
+
+/************************ IMPORTS *****************************/
 import React from 'react';
 import axios from 'axios';
 import Footer from '../components/footer';
 import { useNavigate } from 'react-router-dom';
 
+/************************ COMPONENT *****************************/
+
+
+/**
+ * Name: RegisterForm
+ * Description: Askes the user to enter their login credentials. Then it passes the info to the backend
+ *              where it checks if a user with that email already exists. If not, it creates a new user
+ *              in the database and redirects the user to the login page.
+ */
 function RegisterForm(){
   const navigate = useNavigate();
   const [registerEmail, setRegisterEmail] = React.useState("");

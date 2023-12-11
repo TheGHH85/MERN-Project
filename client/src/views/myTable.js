@@ -1,3 +1,12 @@
+/**
+ * Name: MyTable.js
+ * Type: Client side (View)
+ * Description: This is a page that displays all the employees in the database in a table.
+ * Programmer: Zac Bondy - c0870952
+ 
+ */
+
+/************************ IMPORTS *****************************/
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
@@ -6,7 +15,14 @@ import Navbar from '../components/navbar';
 import '../css/styles.css';
 import { useSignOut } from '../authentication/useSignOut';
 
+/************************ COMPONENT *****************************/
 
+
+/**
+ * Name: MyTable
+ * Description: This will display all the employees in the database in a table by 
+ *              fetching the data from the backend.
+ */
 const MyTable = () => {
   const signOut = useSignOut();
   const [persons, setPersons] = useState([]);

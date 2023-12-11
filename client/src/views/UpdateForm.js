@@ -1,3 +1,11 @@
+/**
+ * Name: UpdateForm.js
+ * Type: Client side (View)
+ * Description: This is a page that allows the user to update or delete an employee in the database.
+ * Programmer: Zac Bondy - c0870952
+ */
+
+/************************ IMPORTS *****************************/
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
@@ -5,6 +13,14 @@ import Navbar from '../components/navbar';
 import Footer from '../components/footer';
 import '../css/styles.css'
 import { useSignOut } from '../authentication/useSignOut';
+
+/************************ COMPONENT *****************************/
+
+/**
+ * Name: UpdateForm
+ * Description: This will display a form that allows the user to update an employee in the database.
+ *              The form is pre-populated with the chosen employee's current information. 
+ */
 const UpdateForm = () => {
   const signOut = useSignOut();
     const { id } = useParams();
@@ -33,6 +49,11 @@ const UpdateForm = () => {
             });
     }, [id]);
 
+
+    /**
+     * Name: handleDelete
+     * Description: this deletes the employee from the database.
+     */
     const handleDelete = async () => {
         try {
             await axios.post(`http://localhost:8080/delete/${id}`);
@@ -42,6 +63,11 @@ const UpdateForm = () => {
         }
     };
 
+    /**
+     * Name: handleSubmit
+     * Descriptiom: This allows the user to change any of the fields and submit the form to 
+     *              update the employee in the database. 
+     */
     const handleSubmit = async (e) => {
         e.preventDefault();
         await axios.put(`http://localhost:8080/update/${id}`, formData);
