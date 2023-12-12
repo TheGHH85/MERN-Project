@@ -49,7 +49,7 @@ function LoginForm() {
             }
         }).catch((error) => {
             console.error("Login error:", error);
-            alert("Login failed");
+            alert("Login failed, please try again.");
         });
     };
 
@@ -61,7 +61,7 @@ function LoginForm() {
     return (
         <>
         <h1 className="login-h1 text-center">Welcome to Employee Database Management System</h1>
-        <h3 className="login-h1 text-center">Please enter your email or password</h3>
+        <h3 className="login-h1 login-h3 text-center">Please enter your email and password</h3>
         <div className="login-form-box">
             <div className="login-form">
                 <form className="row g-3" onSubmit={handleLogin}>

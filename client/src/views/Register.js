@@ -20,22 +20,33 @@ import { useNavigate } from 'react-router-dom';
  *              where it checks if a user with that email already exists. If not, it creates a new user
  *              in the database and redirects the user to the login page.
  */
-function RegisterForm(){
-  const navigate = useNavigate();
-  const [registerEmail, setRegisterEmail] = React.useState("");
-  const [registerPassword, setRegisterPassword] = React.useState("");
-  const register = () => {
-    axios({
-      method: "POST",
-      data: {
-        email: registerEmail,
-        password: registerPassword
-      },
-      withCredentials: true,
-      url: "http://localhost:8080/register",
-    }).then((res) => console.log(res));
-    navigate("/");
-  };
+function RegisterForm() {
+    const navigate = useNavigate();
+    const [registerEmail, setRegisterEmail] = React.useState("");
+    const [registerPassword, setRegisterPassword] = React.useState("");
+
+    const register = (e) => {
+        e.preventDefault(); // Prevent form from refreshing the page
+        axios({
+            method: "POST",
+            data: {
+                email: registerEmail,
+                password: registerPassword
+            },
+            withCredentials: true,
+            url: "http://localhost:8080/register",
+        }).then((res) => {
+            console.log(res);
+            navigate("/");
+        }).catch((error) => {
+            if (error.response && error.response.status === 409) {
+                alert("Email already used, please try again.");
+            } else {
+                console.error("Registration error:", error);
+            }
+        });
+    };
+
   return(
     <>
     <h1 className="login-h1 text-center">Please Register to login</h1>

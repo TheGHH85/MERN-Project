@@ -48,7 +48,7 @@ const MyForm = () => {
     e.preventDefault();
 
     await axios.post('http://localhost:8080/persons', formData);
-    alert('Data submitted successfully!');
+    alert('New employee submitted successfully!');
     setFormData({
       firstName: '',
       lastName: '',

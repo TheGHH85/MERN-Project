@@ -7,15 +7,20 @@ body{
     margin: 2% 0;
 
 }
+
+.login-h3{
+    margin-top: 5%;
+}
 .login-form{
     color: #fff;
     
 }
 
 .login-form-box{
-    margin: 3% 20%;
-    border: #000 solid 2px;
+    margin: 2% 20%;
+    border: #cccccc solid 6px;
     padding: 1%;
+    border-radius: 55px;
 }
 .login-form-box button{
     margin-right: 10%;

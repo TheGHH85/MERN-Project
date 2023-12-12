@@ -49,20 +49,30 @@ router.post('/login', (req, res, next) => {
  */
 router.post('/register', async (req, res) => {
     try {
+        // Check if a user with the given email already exists
         const userExists = await User.findOne({ email: req.body.email });
+
+        // If a user exists, return a 409 Conflict status with a message
         if (userExists) {
-            return res.send("User Already Exists");
+            return res.status(409).send("User Already Exists");
         }
 
+        // If the user does not exist, hash the password
         const hashedPassword = await bcrypt.hash(req.body.password, 10);
+
+        // Create a new user with the hashed password
         const newUser = new User({
             email: req.body.email,
             password: hashedPassword
         });
 
+        // Save the new user to the database
         await newUser.save();
+
+        // Send a response indicating that the user was created
         res.send("User Created");
     } catch (err) {
+        // If an error occurs, send a 500 Internal Server Error status
         res.status(500).send("An error occurred");
         throw err;
     }
