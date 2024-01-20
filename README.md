@@ -34,15 +34,6 @@ A simple mock employee directory CRUD application that uses the MERN stack using
 - axios
 - Bootstrap
 
-## Mongo Account info
-
-Please see mongoDB.txt for account information
-
-## Images
-
-I have included screenshots of all the pages and my mongo account in the images directory, incase there are any issues
-
-
 # Instructions
 
 The instruction on how to use the site are almost the same as the assignemnt. However, this project has user authentication, it took me 13 days to get it working but I'm proud to say I got it working 100%.
@@ -67,12 +58,3 @@ To see the authentication in full action follow these steps
 ## More about Authentication
 
 After you review MongoDB, you will notice that in the users collection, the password does not match what you entered when you registered. This is because it uses bcrypt to encypt the passwords when the are created and passed to Mongo, then decrypts it when its passed back during the login verification. 
-
-## Contact
-
-
-If you need to reachout for any questions please email me, if possible please email me at:
-- zacbondy555@gmail.com (personal, faster reponse)
-- c0870952@mylambton.com 
-
-I hope you enjoy the project! I really enjoyed working on it over the last 3 weeks and learned a lot from it! 
