@@ -1,4 +1,4 @@
-# MERN Project - c0870952 Zac Bondy
+# MERN Project
 
 A simple mock employee directory CRUD application that uses the MERN stack using  RESTful API calls and user authentication and verification (please see 'Instructions' below for details).
 
